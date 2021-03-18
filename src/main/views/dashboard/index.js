@@ -1,5 +1,5 @@
-function App() {
+function Main() {
   return <h1>Inicio do Projeto</h1>;
 }
 
-export default App;
+export default Main;
