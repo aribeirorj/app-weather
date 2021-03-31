@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Dashboard from '../views/dashboard';
+import Dashboard from './../views/dashboard';
 
 function Routes() {
   return (
