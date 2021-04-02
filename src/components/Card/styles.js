@@ -11,7 +11,7 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   width: 40%;
   height: 100vh;
-  min-width: 315px;
+  min-width: 280px;
   max-width: 380px;
   padding: 30px;
   -webkit-box-shadow: 33px 40px 47px -23px rgba(173, 173, 173, 0.75);
