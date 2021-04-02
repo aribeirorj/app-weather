@@ -1,11 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-
-  * {
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
-
-  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,700;1,800&display=swap');
 
   *:focus {
     outline:0;
@@ -16,16 +13,13 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     outline: 0;
-    color: #ffffff;
-
+    background: #e0e0e0;
+    color: #707070;    
   }
 
   body {
     -webkit-font-smoothing: antialiased;
-  }
-
-  button {
-    font: 14px 'Roboto', sans-serif;    
+    font-family: 'Raleway', sans-serif;
   }
 
   a {

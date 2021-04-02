@@ -5,11 +5,9 @@ import Dashboard from './../views/dashboard';
 function Routes() {
   return (
     <BrowserRouter>
-      <div>
-        <Switch>
-          <Route exact path="/" component={Dashboard} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/" component={Dashboard} />
+      </Switch>
     </BrowserRouter>
   );
 }

@@ -1,5 +1,14 @@
+import { Search } from '../../components';
+import { Container } from './styles';
+import { Card } from '../../components';
+
 function Dashboard() {
-  return <h1>Inicio do Projeto</h1>;
+  return (
+    <Container>
+      <Search />
+      <Card />
+    </Container>
+  );
 }
 
 export default Dashboard;
