@@ -4,7 +4,7 @@ import { Card, Search, Loading } from '../../components';
 import { loadDataCoordinate, loadDataCity } from '../../useCase';
 
 function Dashboard() {
-  const [dataWeather, setDataWeather] = useState({});
+  const [dataWeather, setDataWeather] = useState('');
 
   const loadDataSearch = useCallback(async (params) => {
     let infoDataCity = await loadDataCity(params);
@@ -23,11 +23,7 @@ function Dashboard() {
   return (
     <Container>
       <Search loadDataSearch={loadDataSearch} />
-      {Object.entries(dataWeather).length === 0 ? (
-        <Loading />
-      ) : (
-        <Card dataWeather={dataWeather} />
-      )}
+      {!!dataWeather ? <Card dataWeather={dataWeather} /> : <Loading />}
     </Container>
   );
 }
