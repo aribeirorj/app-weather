@@ -25,6 +25,7 @@ export const Input = styled.input`
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   border-radius: 30px;
+  width: 300px;
   ::placeholder {
     color: #6c757d;
   }

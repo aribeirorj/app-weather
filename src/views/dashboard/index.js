@@ -1,14 +1,19 @@
 import React, { useEffect, useCallback, useState } from 'react';
 import { Container } from './styles';
 import { Card, Search, Loading } from '../../components';
-import { loadInfoUser } from '../../useCase';
+import { loadDataCoordinate, loadDataCity } from '../../useCase';
 
 function Dashboard() {
   const [dataWeather, setDataWeather] = useState({});
 
+  const loadDataSearch = useCallback(async (params) => {
+    let infoDataCity = await loadDataCity(params);
+    !!infoDataCity && setDataWeather(infoDataCity.data);
+  }, []);
+
   const loadDataInitial = useCallback(async () => {
-    let infoWeather = await loadInfoUser();
-    setDataWeather(infoWeather);
+    let infoDataCoordinate = await loadDataCoordinate();
+    infoDataCoordinate && setDataWeather(infoDataCoordinate.data);
   }, []);
 
   useEffect(() => {
@@ -17,11 +22,11 @@ function Dashboard() {
 
   return (
     <Container>
-      <Search />
+      <Search loadDataSearch={loadDataSearch} />
       {Object.entries(dataWeather).length === 0 ? (
         <Loading />
       ) : (
-        <Card data={dataWeather} />
+        <Card dataWeather={dataWeather} />
       )}
     </Container>
   );

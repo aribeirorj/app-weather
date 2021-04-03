@@ -1,2 +1,2 @@
-export { default as loadDataWeather } from './loadDataWeather';
-export { default as loadInfoUser } from './loadInfoUser';
+export { default as loadDataCity } from './loadDataCity';
+export { default as loadDataCoordinate } from './loadDataCoordinate';

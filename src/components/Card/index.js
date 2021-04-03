@@ -9,9 +9,16 @@ function Card(props) {
     name = '',
     main = '',
     weather = [{ description: '', icon: '' }],
-  } = props.data;
-  const { temp, temp_max, temp_min, pressure = '', humidity = '' } = main;
-  const { description, icon } = weather[0];
+  } = props.dataWeather;
+
+  const {
+    temp = '',
+    temp_max = '',
+    temp_min = '',
+    pressure = '',
+    humidity = '',
+  } = main;
+  const { description = '', icon = '' } = weather[0];
 
   let imageWeather = icon.includes('d') ? day_image : night_image;
   let urlIcon = `http://openweathermap.org/img/wn/${icon}.png`;
