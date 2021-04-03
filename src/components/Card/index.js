@@ -5,7 +5,6 @@ import day_image from '../../assets/img/day_image.svg';
 import { Container, Head, Body, Description, Footer, Icon } from './styles';
 
 function Card(props) {
-  debugger;
   const {
     name = '',
     main = '',
@@ -14,8 +13,11 @@ function Card(props) {
   const { temp, temp_max, temp_min, pressure = '', humidity = '' } = main;
   const { description, icon } = weather[0];
 
+  let imageWeather = icon.includes('d') ? day_image : night_image;
+  let urlIcon = `http://openweathermap.org/img/wn/${icon}.png`;
+
   return (
-    <Container img={day_image}>
+    <Container img={imageWeather} alt="Imagem do tempo">
       <Head>{name}</Head>
       <Body>
         <Description>
@@ -23,13 +25,13 @@ function Card(props) {
             <span>{Math.trunc(temp)}°c</span>
           </div>
           <div>
-            <div>{description}</div>
+            <strong>{description}</strong>
             <div>{Math.trunc(temp_max)}° máx</div>
             <div>{Math.trunc(temp_min)}° min</div>
           </div>
         </Description>
         <Icon>
-          <img src={`http://openweathermap.org/img/wn/${icon}.png`} />
+          <img src={urlIcon} alt="Icone do tempo atual" />
         </Icon>
       </Body>
       <Footer>
