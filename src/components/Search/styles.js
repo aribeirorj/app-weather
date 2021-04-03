@@ -20,6 +20,7 @@ export const Input = styled.input`
   font-size: 18px;
   margin: 10px;
   padding: 20px;
+  max-width: 100%;
   border: 1px solid #ced4da;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;

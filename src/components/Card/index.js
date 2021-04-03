@@ -1,50 +1,47 @@
 import React from 'react';
-import cloud from '../../assets/img/cloud.svg';
-import day_image from '../../assets/img/day_image.svg';
-import down from '../../assets/img/down.svg';
 import night_image from '../../assets/img/night_image.svg';
-import up from '../../assets/img/up.svg';
+import day_image from '../../assets/img/day_image.svg';
+
 import { Container, Head, Body, Description, Footer, Icon } from './styles';
 
-function Card(data) {
+function Card(props) {
   debugger;
-  const { name = '', main = '', weather = '' } = data.data;
+  const {
+    name = '',
+    main = '',
+    weather = [{ description: '', icon: '' }],
+  } = props.data;
+  const { temp, temp_max, temp_min, pressure = '', humidity = '' } = main;
+  const { description, icon } = weather[0];
+
   return (
     <Container img={day_image}>
       <Head>{name}</Head>
       <Body>
         <Description>
           <div>
-            <span>{Math.trunc(main.temp)}°</span>
+            <span>{Math.trunc(temp)}°c</span>
           </div>
           <div>
-            <p>{weather.description}</p>
-            <p>{Math.trunc(main.temp)}°</p>
-            <p>{Math.trunc(main.temp)}°</p>
+            <div>{description}</div>
+            <div>{Math.trunc(temp_max)}° máx</div>
+            <div>{Math.trunc(temp_min)}° min</div>
           </div>
         </Description>
         <Icon>
-          <img src={cloud} />
+          <img src={`http://openweathermap.org/img/wn/${icon}.png`} />
         </Icon>
       </Body>
-      {/* <Footer>
+      <Footer>
         <div>
-          <div>
-            <span>35&deg;C</span>
-          </div>
-          <div>
-            <span>35&deg;C</span>
-          </div>
+          <span>{pressure}</span>
+          <div>pressão</div>
         </div>
         <div>
-          <div>
-            <span>35&deg;C</span>
-          </div>
-          <div>
-            <span>35&deg;C</span>
-          </div>
+          <span>{humidity}</span>
+          <div>umidade</div>
         </div>
-      </Footer> */}
+      </Footer>
     </Container>
   );
 }

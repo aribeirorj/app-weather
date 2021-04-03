@@ -30,7 +30,7 @@ export const Body = styled.div`
   flex-direction: column;
   justify-content: space-between;
   letter-spacing: --5px;
-  line-height: 10pt;
+  line-height: 20pt;
   align-items: center;
 
   span {
@@ -38,7 +38,7 @@ export const Body = styled.div`
   }
 
   div {
-    margin: 10pt;
+    margin: 5pt;
   }
 `;
 
@@ -60,10 +60,17 @@ export const Icon = styled.div`
 
   img {
     margin: auto;
-    height: 40px;
+    height: 58pt;
   }
 `;
 
 export const Footer = styled.div`
   display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  span {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
 `;

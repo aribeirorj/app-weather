@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback, useState } from 'react';
 import { Container } from './styles';
-import { Card, Search } from '../../components';
+import { Card, Search, Loading } from '../../components';
 import { loadInfoUser } from '../../useCase';
 
 function Dashboard() {
@@ -9,8 +9,7 @@ function Dashboard() {
   const loadDataInitial = useCallback(async () => {
     let infoWeather = await loadInfoUser();
     setDataWeather(infoWeather);
-    // console.log(dataWeather.name);
-  }, [loadInfoUser]);
+  }, []);
 
   useEffect(() => {
     loadDataInitial();
@@ -19,7 +18,11 @@ function Dashboard() {
   return (
     <Container>
       <Search />
-      <Card data={dataWeather} />
+      {Object.entries(dataWeather).length === 0 ? (
+        <Loading />
+      ) : (
+        <Card data={dataWeather} />
+      )}
     </Container>
   );
 }
