@@ -1,4 +1,5 @@
 import { api } from '../infra';
+import { MessageError } from '../messages';
 
 export async function getService(param) {
   try {
@@ -7,6 +8,6 @@ export async function getService(param) {
         `${'&lang=pt&units=metric&appid=38f3304ccb93af433531c0ab09527992'}`
     );
   } catch (e) {
-    alert('Não foram encontrados dados para pesquisa');
+    MessageError();
   }
 }

@@ -2,7 +2,15 @@ import React from 'react';
 import night_image from '../../assets/img/night_image.svg';
 import day_image from '../../assets/img/day_image.svg';
 
-import { Container, Head, Body, Description, Footer, Icon } from './styles';
+import {
+  Container,
+  Head,
+  Body,
+  Description,
+  Footer,
+  Icon,
+  Details,
+} from './styles';
 
 function Card(props) {
   const {
@@ -42,14 +50,14 @@ function Card(props) {
         </Icon>
       </Body>
       <Footer>
-        <div>
+        <Details>
           <span>{pressure}</span>
           <div>pressão</div>
-        </div>
-        <div>
+        </Details>
+        <Details>
           <span>{humidity}</span>
           <div>umidade</div>
-        </div>
+        </Details>
       </Footer>
     </Container>
   );
