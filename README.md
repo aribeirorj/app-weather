@@ -23,7 +23,7 @@ Em primeiro lugar você precisa ter instalado globalmente `node` or `yarn` na su
 
 Print do sistema
 
-![print do sistema](https://github.com/aribeirorj/app-weather/print.png?raw=true)
+![print do sistema](https://github.com/aribeirorj/app-weather/blob/master/print.png?raw=true)
 
 Instalação:
 
